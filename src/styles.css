@@ -1,0 +1,117 @@
+body {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding-top: 50px;
+  background-color: silver;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.card {
+  background-color: rgba(197, 138, 138, 0.075);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-width: 300px;
+  margin: auto;
+}
+
+.card:hover {
+  background-color: white;
+  border: 5px solid black;
+  cursor: pointer;
+}
+
+.card-header img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.card-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.hero-name {
+  margin: 10px 0;
+  font-size: 24px;
+}
+
+.health-bar-container {
+  background-color: #eee;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.health-bar {
+  height: 25px;
+  background-color: #4caf50;
+  width: 0%;
+  transition: width 0.3s ease-in-out;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.stat-item {
+  flex: 1 1 20%;
+  text-align: center;
+  margin: 10px;
+}
+
+.stat-value {
+  font-weight: bold;
+}
+
+.control-panel {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.control-panel button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.control-panel button:hover {
+  background-color: #0056b3;
+}
+
+.cardsList {
+  width: 1300px;
+  max-width: 100%; /* Ensure it doesn't overflow on smaller screens */
+  margin: 0 auto; /* Center it horizontally */
+  padding: 16px;
+  box-sizing: border-box; /* Include padding in the width calculation */
+  background-color: gray;
+  border: 3px solid black;
+  border-radius: 8px; /* Optional: if you want rounded corners */
+}
+
+.cardsTitle {
+  font-weight: bolder;
+  text-align: center;
+  font-style: italic;
+}
