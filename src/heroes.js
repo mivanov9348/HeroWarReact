@@ -78,7 +78,7 @@ const heroesInit = [
   },
   {
     name: "Monk",
-    image: "elf.png",
+    image: "monk.png",
     attack: 11,
     defense: 13,
     speed: 17,
@@ -120,7 +120,7 @@ const heroesInit = [
   },
   {
     name: "Thief",
-    image: "pirate.png",
+    image: "thief.png",
     attack: 15,
     defense: 16,
     speed: 18,
