@@ -1,11 +1,21 @@
 body {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  height: 100vh;
   margin: 0;
-  padding-top: 50px;
-  background-color: silver;
+  height: 100vh;
+  position: relative; /* Position relative so that the pseudo-element is positioned in relation to the body */
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../public/images/wallpaper.png") no-repeat center
+    center/cover fixed;
+  opacity: 0.4;
+  z-index: -1;
 }
 
 .cards {
@@ -14,6 +24,18 @@ body {
   gap: 16px;
   margin: 0 auto;
   padding: 16px;
+}
+
+.sortCards {
+  caret-color: transparent;
+  text-align: center;
+  font-weight: bolder;
+  border: 2px solid black;
+  font-size: 18px;
+  color: #f5efef;
+  background-color: gray;
+  height: 40px;
+  width: 90px;
 }
 
 .card {
@@ -65,13 +87,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
 }
 
 .stat-item {
-  flex: 1 1 20%;
+  flex: 1 1 10%;
   text-align: center;
-  margin: 10px;
+  margin: 5px;
 }
 
 .stat-value {
@@ -100,14 +121,17 @@ body {
 }
 
 .cardsList {
+  overflow-y: auto;
+  overflow-x: hidden;
   width: 1300px;
-  max-width: 100%; /* Ensure it doesn't overflow on smaller screens */
-  margin: 0 auto; /* Center it horizontally */
+  max-width: 100%;
+  margin: 0 auto;
   padding: 16px;
-  box-sizing: border-box; /* Include padding in the width calculation */
+  box-sizing: border-box;
   background-color: gray;
   border: 3px solid black;
-  border-radius: 8px; /* Optional: if you want rounded corners */
+  border-radius: 8px;
+  text-align: center;
 }
 
 .cardsTitle {
