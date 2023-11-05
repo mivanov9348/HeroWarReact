@@ -6,26 +6,30 @@ function randomHealthDamage() {
   return randomDamage;
 }
 
-const initialState = {
-  health: 100,
-  stats: { attack: 0, defense: 0, speed: 0 },
-};
+function ActionPanel({ warrior }) {
+  const initialState = {
+    health: warrior.health,
+    stats: {
+      attack: warrior.attack,
+      defense: warrior.defense,
+      speed: warrior.speed,
+    },
+  };
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "attack":
-      return {
-        ...state,
-        health: state.health - action.payload,
-      };
-    case "heal":
-      return { ...state, health: state.health + action.payload };
-    default:
-      return state;
+  function reducer(state, action) {
+    switch (action.type) {
+      case "attack":
+        return {
+          ...state,
+          health: state.health - action.payload,
+        };
+      case "heal":
+        return { ...state, health: state.health + action.payload };
+      default:
+        return state;
+    }
   }
-}
 
-function ActionPanel() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (

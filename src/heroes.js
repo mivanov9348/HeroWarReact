@@ -2,6 +2,8 @@ const heroesInit = [
   {
     name: "Elf",
     image: "elf.png",
+    id: 1,
+    id: 1,
     health: 100,
     attack: 9,
     defense: 11,
@@ -12,6 +14,7 @@ const heroesInit = [
   {
     name: "Amazon",
     image: "amazon.png",
+    id: 2,
     health: 100,
     attack: 12,
     defense: 12,
@@ -22,6 +25,7 @@ const heroesInit = [
   {
     name: "Barbarian",
     image: "barbarian.png",
+    id: 3,
     health: 100,
     attack: 18,
     defense: 12,
@@ -32,6 +36,7 @@ const heroesInit = [
   {
     name: "Dark",
     image: "dark.png",
+    id: 4,
     health: 100,
     attack: 11,
     defense: 12,
@@ -42,6 +47,7 @@ const heroesInit = [
   {
     name: "Druid",
     image: "druid.png",
+    id: 5,
     health: 100,
     attack: 9,
     defense: 14,
@@ -52,6 +58,7 @@ const heroesInit = [
   {
     name: "Dwarf",
     image: "dwarf.png",
+    id: 6,
     health: 100,
     attack: 13,
     defense: 13,
@@ -62,6 +69,7 @@ const heroesInit = [
   {
     name: "Fighter",
     image: "fighter.png",
+    id: 7,
     health: 100,
     attack: 13,
     defense: 13,
@@ -72,6 +80,7 @@ const heroesInit = [
   {
     name: "Gladiator",
     image: "gladiator.png",
+    id: 8,
     health: 100,
     attack: 18,
     defense: 9,
@@ -82,6 +91,7 @@ const heroesInit = [
   {
     name: "Hercules",
     image: "hercules.png",
+    id: 9,
     health: 100,
     attack: 20,
     defense: 18,
@@ -92,6 +102,7 @@ const heroesInit = [
   {
     name: "Jedi Knight",
     image: "jediKnight.png",
+    id: 10,
     health: 100,
     attack: 17,
     defense: 12,
@@ -102,6 +113,7 @@ const heroesInit = [
   {
     name: "Knight",
     image: "knight.png",
+    id: 11,
     health: 100,
     attack: 18,
     defense: 14,
@@ -112,6 +124,7 @@ const heroesInit = [
   {
     name: "Monk",
     image: "monk.png",
+    id: 12,
     health: 100,
     attack: 11,
     defense: 13,
@@ -122,6 +135,7 @@ const heroesInit = [
   {
     name: "Pirate",
     image: "pirate.png",
+    id: 13,
     health: 100,
     attack: 12,
     defense: 12,
@@ -132,6 +146,7 @@ const heroesInit = [
   {
     name: "Ranger",
     image: "ranger.png",
+    id: 14,
     health: 100,
     attack: 14,
     defense: 12,
@@ -142,6 +157,7 @@ const heroesInit = [
   {
     name: "Rogue",
     image: "rogue.png",
+    id: 15,
     health: 100,
     attack: 16,
     defense: 14,
@@ -152,6 +168,7 @@ const heroesInit = [
   {
     name: "Samurai",
     image: "samurai.png",
+    id: 16,
     health: 100,
     attack: 15,
     defense: 13,
@@ -162,6 +179,7 @@ const heroesInit = [
   {
     name: "Spartan",
     image: "spartan.png",
+    id: 17,
     health: 100,
     attack: 16,
     defense: 14,
@@ -172,6 +190,7 @@ const heroesInit = [
   {
     name: "Thief",
     image: "thief.png",
+    id: 18,
     health: 100,
     attack: 15,
     defense: 16,
@@ -182,6 +201,7 @@ const heroesInit = [
   {
     name: "Warrior",
     image: "warrior.png",
+    id: 19,
     health: 100,
     attack: 14,
     defense: 14,
@@ -192,6 +212,7 @@ const heroesInit = [
   {
     name: "Wizard",
     image: "wizard.png",
+    id: 20,
     health: 100,
     attack: 12,
     defense: 16,

@@ -1,3 +1,5 @@
+import ActionPanel from "./ActionPanel";
+
 export default function Card({ warrior, onClick, disabled }) {
   const cardStyle = {
     textAlign: "center",

@@ -5,44 +5,42 @@ import Card from "./Card";
 const initialState = {
   heroes: heroesInit,
   selectedCards: {},
+  chooseHeroes: true,
 };
 
 function reducer(state, action) {
   switch (action.type) {
     case "sort":
       const sortBy = action.payload;
-      const sortedHeroes = [...state].sort((a, b) => {
+      const sortedHeroes = [...state.heroes].sort((a, b) => {
         return b[sortBy] - a[sortBy];
       });
-      return sortedHeroes;
-    case "selectCard":
-      const selectedCards = {
-        ...state.selectedCards,
-        [action.payload]: true,
-      };
-      return { ...state, selectedCards };
+      return { ...state, heroes: sortedHeroes };
+
+    case "playerSelect":
+      const newSelectedCards = { ...state.selectedCards };
+      newSelectedCards[action.payload.index] = true; // assuming true represents a selected card
+      return { ...state, selectedCards: newSelectedCards };
+
     default:
       return state;
   }
 }
 
-export default function CardsList({ onGameStart }) {
+export default function CardsList({ onSelect }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  function selectPlayerCard(card) {
+    onSelect(card);
+  }
 
   function handleSort(e) {
     dispatch({ type: "sort", payload: e.target.value });
   }
 
-  function selectCard(index) {
-    dispatch({ type: "selectCard", payload: index });
-  }
-
   return (
     <div className="cardsList">
-      <button
-        style={{ float: "right", fontSize: "40px", color: "red" }}
-        onClick={onGameStart}
-      >
+      <button style={{ float: "right", fontSize: "40px", color: "red" }}>
         &times;
       </button>
       <h1 className="cardsTitle">Choose Heroes</h1>
@@ -52,13 +50,22 @@ export default function CardsList({ onGameStart }) {
         <option value="defense">Defense</option>
         <option value="speed">Speed</option>
       </select>
+      <br />
+      {!state.chooseHeroes && (
+        <div>
+          <button>Start</button>
+          <button onClick={() => dispatch({ type: "changePlayers" })}>
+            Change Players
+          </button>
+        </div>
+      )}
       <hr></hr>
       <div className="cards">
         {state.heroes.map((warrior, index) => (
           <Card
             key={index}
             warrior={warrior}
-            onClick={() => selectCard(index)}
+            onClick={() => selectPlayerCard(warrior)}
             disabled={!!state.selectedCards[index]}
           />
         ))}
