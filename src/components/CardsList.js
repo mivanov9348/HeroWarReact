@@ -27,11 +27,11 @@ function reducer(state, action) {
   }
 }
 
-export default function CardsList({ onSelect }) {
+export default function CardsList({ onChoose }) {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  function selectPlayerCard(card) {
-    onSelect(card);
+  function selectPlayerCard(hero) {
+    onChoose(hero);
   }
 
   function handleSort(e) {
@@ -61,12 +61,11 @@ export default function CardsList({ onSelect }) {
       )}
       <hr></hr>
       <div className="cards">
-        {state.heroes.map((warrior, index) => (
+        {state.heroes.map((hero, index) => (
           <Card
             key={index}
-            warrior={warrior}
-            onClick={() => selectPlayerCard(warrior)}
-            disabled={!!state.selectedCards[index]}
+            warrior={hero}
+            onClick={() => selectPlayerCard(hero)}
           />
         ))}
       </div>

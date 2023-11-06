@@ -5,29 +5,6 @@ body {
   background-image: url("../public/images/wallpaper.png");
 }
 
-.menu {
-  margin-left: 620px;
-  margin-top: 200px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.menuBtn {
-  font-size: 20px;
-  text-align: center;
-  width: 300px;
-  height: 50px;
-  background-color: grey;
-  color: blanchedalmond;
-  border-radius: 20px;
-}
-
-.menuBtn:hover {
-  border: 2px solid black;
-  opacity: 0.8;
-}
-
 .cards {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -49,18 +26,12 @@ body {
 }
 
 .card {
-  background-color: rgba(197, 138, 138, 0.075);
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  max-width: 300px;
+  max-width: 250px;
   margin: auto;
-}
-
-.card:hover {
-  background-color: white;
-  border: 5px solid black;
-  cursor: pointer;
 }
 
 .card-header img {

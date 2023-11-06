@@ -1,37 +1,7 @@
-import { useReducer } from "react";
+// ActionPanel.js
+import React from "react";
 
-function randomHealthDamage() {
-  let randomDamage = Math.trunc(Math.random() * 99);
-  console.log(randomDamage);
-  return randomDamage;
-}
-
-function ActionPanel({ warrior }) {
-  const initialState = {
-    health: warrior.health,
-    stats: {
-      attack: warrior.attack,
-      defense: warrior.defense,
-      speed: warrior.speed,
-    },
-  };
-
-  function reducer(state, action) {
-    switch (action.type) {
-      case "attack":
-        return {
-          ...state,
-          health: state.health - action.payload,
-        };
-      case "heal":
-        return { ...state, health: state.health + action.payload };
-      default:
-        return state;
-    }
-  }
-
-  const [state, dispatch] = useReducer(reducer, initialState);
-
+export default function ActionPanel({ dispatch }) {
   return (
     <div className="control-panel">
       <button
@@ -59,4 +29,6 @@ function ActionPanel({ warrior }) {
   );
 }
 
-export default ActionPanel;
+function randomHealthDamage() {
+  return Math.floor(Math.random() * 99);
+}
